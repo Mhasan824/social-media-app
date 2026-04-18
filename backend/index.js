@@ -134,3 +134,4 @@ app.listen(3000, () => {
   connectDb();
   console.log('Server running on http://localhost:3000');
 });
+module.exports = app;
