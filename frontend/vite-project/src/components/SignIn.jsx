@@ -18,7 +18,7 @@ const SignIn = () => {
 const submitFunc = async (e) => {
   e.preventDefault();
   try {
-    const res = await axios.post("http://localhost:3000/login", credentials, { withCredentials: true });
+    const res = await axios.post("${import.meta.env.VITE_API_URL}/login", credentials, { withCredentials: true });
     alert(res.data.msg); // Success message
     navigate("/dashboard"); // User ko agle page par bhejein
   } catch (error) {

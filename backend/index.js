@@ -132,6 +132,6 @@ app.post('/login', async (req, res) => {
 // --- Server Startup ---
 app.listen(3000, () => {
   connectDb();
-  console.log('Server running on http://localhost:3000');
+  console.log('Server running on ${import.meta.env.VITE_API_URL}');
 });
 module.exports = app;
