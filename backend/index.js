@@ -13,7 +13,9 @@ app.use(cookieparser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: "https://social-media-app-frontend-mocha.vercel.app",
+  origin: "social-media-app-frontend-mocha.vercel.appgit add .
+git commit -m "update CORS to allow frontend origin"
+git push origin main",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
