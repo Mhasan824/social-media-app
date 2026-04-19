@@ -13,7 +13,7 @@ app.use(cookieparser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: "https://social-media-app-frontend-mocha.vercel.app",
+  origin: "https://social-media-app-frontend-rb6naius5-mhasan824s-projects.vercel.app/",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
