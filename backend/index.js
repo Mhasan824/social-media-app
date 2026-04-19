@@ -13,16 +13,13 @@ app.use(cookieparser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Ye sabse upar add karo, cors se pehle
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", req.headers.origin || "*");
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(200);
-  }
-  next();
-});
+const cors = require('cors');
+
+app.use(cors({
+  origin: ["https://social-media-app-frontend-mocha.vercel.app"], // Your frontend's URL
+  methods: ["POST", "GET", "PUT", "DELETE"],
+  credentials: true
+}));
 
 // --- Auth Middleware ---
 const isLoggedIn = (req, res, next) => {
