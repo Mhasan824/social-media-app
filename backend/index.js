@@ -15,18 +15,11 @@ app.use(express.urlencoded({ extended: true }));
 // Ye sabse upar add karo, cors se pehle
 const cors = require('cors');
 
-// In your backend index.js
 app.use(cors({
-  // Temporarily use '*' to verify if this is the only issue, 
-  // or list both your production and preview URLs
-  origin: [
-      "https://social-media-app-frontend-mocha.vercel.app",
-      "https://social-media-app-frontend-2xa3wtyas-mhasan824s-projects.vercel.app"
-  ],
+  origin: '*', // Allows all origins
   methods: ["POST", "GET", "PUT", "DELETE"],
   credentials: true
 }));
-
 // --- Auth Middleware ---
 const isLoggedIn = (req, res, next) => {
   const token = req.cookies.token;
